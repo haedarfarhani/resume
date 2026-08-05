@@ -22,7 +22,7 @@ const resumeData = {
       },
       {
         icon: "github",
-        text: "github.com/HeydarFarhani",
+        text: "github.com/haedarfarhani",
         href: "https://github.com/haedarfarhani",
         ltr: true,
       },
