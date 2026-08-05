@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>رزومه حرفه‌ای – حیدر خلف‌نژاد | توسعه‌دهنده ارشد اندروید</title>
+  <meta name="description" content="رزومه حرفه‌ای حیدر خلف‌نژاد، توسعه‌دهنده ارشد اندروید با بیش از هفت سال سابقه در Java، Kotlin، Clean Architecture و MVVM." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent:      #1a56a0;
+      --accent-dark: #0e3a72;
+      --accent-pale: #e8f0fb;
+      --text:        #1a1a2e;
+      --muted:       #4a5568;
+      --rule:        #cdd8e8;
+      --bg:          #ffffff;
+      --font:        'Vazirmatn', Tahoma, sans-serif;
+      --base:        10.5pt;
+      --small:       9pt;
+    }
+
+    html { font-size: var(--base); }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      direction: rtl;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 42px 48px;
+      background: var(--bg);
+    }
+
+    @media print {
+      body { margin: 0; }
+      .page { max-width: 100%; padding: 18mm 18mm 14mm 18mm; margin: 0; }
+      .no-print { display: none !important; }
+      a { color: inherit !important; text-decoration: none !important; }
+    }
+
+    /* Header */
+    .header {
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+    }
+
+    .header h1 {
+      font-size: 26pt;
+      font-weight: 800;
+      color: var(--accent-dark);
+      margin-bottom: 4px;
+    }
+
+    .header .title-role {
+      font-size: 12.5pt;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .contact-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 22px;
+      font-size: var(--small);
+      color: var(--muted);
+    }
+
+    .contact-strip a { color: var(--accent); text-decoration: none; }
+    .contact-strip a:hover { text-decoration: underline; }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Section */
+    section { margin-bottom: 24px; }
+
+    .section-title {
+      font-size: 12pt;
+      font-weight: 700;
+      color: var(--accent-dark);
+      letter-spacing: 0.5px;
+      border-bottom: 2px solid var(--rule);
+      padding-bottom: 5px;
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      right: 0;
+      width: 48px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    /* Summary */
+    .summary p {
+      font-size: var(--base);
+      color: var(--text);
+      line-height: 1.85;
+      text-align: justify;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 30px;
+    }
+
+    .cat-label {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--accent-dark);
+      margin-bottom: 4px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .tag {
+      background: var(--accent-pale);
+      color: var(--accent-dark);
+      border-radius: 3px;
+      padding: 2px 9px;
+      font-size: 8.5pt;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* Jobs */
+    .job { margin-bottom: 20px; }
+    .job + .job { border-top: 1px dashed var(--rule); padding-top: 18px; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+
+    .job-company { font-size: 11.5pt; font-weight: 700; color: var(--accent-dark); }
+    .job-date { font-size: var(--small); color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+
+    .job-meta {
+      display: flex;
+      gap: 16px;
+      font-size: var(--small);
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .job-role { font-weight: 600; color: var(--accent); }
+
+    .job-bullets { list-style: none; padding: 0; }
+
+    .job-bullets li {
+      font-size: var(--base);
+      color: var(--text);
+      padding-right: 14px;
+      position: relative;
+      margin-bottom: 5px;
+      line-height: 1.7;
+    }
+
+    .job-bullets li::before {
+      content: '▸';
+      position: absolute;
+      right: 0;
+      color: var(--accent);
+      font-size: 9pt;
+      top: 3px;
+    }
+
+    /* Education */
+    .edu-item { margin-bottom: 14px; }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .edu-uni { font-weight: 700; font-size: 11pt; color: var(--accent-dark); }
+    .edu-date { font-size: var(--small); color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+    .edu-degree { font-size: 9.5pt; color: var(--muted); }
+
+    /* Print button */
+    .print-btn {
+      display: block;
+      margin: 0 auto 28px auto;
+      padding: 10px 28px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-family: var(--font);
+      font-size: 10pt;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .print-btn:hover { background: var(--accent-dark); }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <button class="print-btn no-print" onclick="window.print()">&#128424;&#65039; دانلود / چاپ رزومه (PDF)</button>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1>حیدر خلف‌نژاد</h1>
+    <div class="title-role">توسعه‌دهنده ارشد اندروید</div>
+    <div class="contact-strip">
+
+      <span class="contact-item">
+        <span>&#128222;</span>
+        <a href="tel:+989166352036" dir="ltr">۰۹۱۶ ۶۳۵ ۲۰۳۶</a>
+      </span>
+
+      <span class="contact-item">
+        <span>&#128231;</span>
+        <a href="mailto:heydar.farhanii@gmail.com" dir="ltr">heydar.farhanii@gmail.com</a>
+      </span>
+
+      <span class="contact-item">
+        <span>&#128279;</span>
+        <a href="https://github.com/HeydarFarhani" target="_blank" dir="ltr">github.com/HeydarFarhani</a>
+      </span>
+
+      <span class="contact-item">
+        <span>&#127968;</span>
+        اهواز، ایران
+      </span>
+
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <section class="summary">
+    <div class="section-title">خلاصه حرفه‌ای</div>
+    <p>
+      توسعه‌دهنده ارشد اندروید با بیش از هفت سال سابقه در طراحی، توسعه و بهینه‌سازی اپلیکیشن‌های موبایل.
+      تسلط عمیق بر <strong>Java</strong>، <strong>Kotlin</strong>، <strong>Android SDK</strong> و اکوسیستم <strong>Jetpack</strong>،
+      همراه با تجربه عملی در پیاده‌سازی معماری‌های <strong>MVVM</strong>، <strong>MVI</strong> و <strong>Clean Architecture</strong>
+      بر پایه اصول <strong>SOLID</strong> و کدنویسی تمیز.
+      سابقه اثبات‌شده در <strong>بهینه‌سازی عملکرد</strong>، <strong>مهاجرت Java به Kotlin</strong>، و یکپارچه‌سازی <strong>REST APIs</strong>.
+      توانمند در همکاری تیمی، <strong>Code Review</strong> و ارتقای پایداری و مقیاس‌پذیری پروژه‌ها در محیط‌های ریموت و بین‌المللی.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <div class="section-title">مهارت‌های فنی</div>
+    <div class="skills-grid">
+
+      <div>
+        <div class="cat-label">زبان‌های برنامه‌نویسی</div>
+        <div class="skill-tags">
+          <span class="tag">Kotlin</span>
+          <span class="tag">Java</span>
+          <span class="tag">C#</span>
+          <span class="tag">ASP.NET Core</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="cat-label">اکوسیستم اندروید (Jetpack)</div>
+        <div class="skill-tags">
+          <span class="tag">Android SDK</span>
+          <span class="tag">Jetpack Compose</span>
+          <span class="tag">ViewModel</span>
+          <span class="tag">LiveData</span>
+          <span class="tag">Room</span>
+          <span class="tag">DataStore</span>
+          <span class="tag">WorkManager</span>
+          <span class="tag">Navigation</span>
+          <span class="tag">Coroutines</span>
+          <span class="tag">Flow</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="cat-label">تزریق وابستگی</div>
+        <div class="skill-tags">
+          <span class="tag">Hilt</span>
+          <span class="tag">Koin</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="cat-label">شبکه و API</div>
+        <div class="skill-tags">
+          <span class="tag">Retrofit</span>
+          <span class="tag">OkHttp</span>
+          <span class="tag">Ktor</span>
+          <span class="tag">RESTful APIs</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="cat-label">معماری و طراحی</div>
+        <div class="skill-tags">
+          <span class="tag">MVVM</span>
+          <span class="tag">MVI</span>
+          <span class="tag">Clean Architecture</span>
+          <span class="tag">SOLID</span>
+          <span class="tag">Design Patterns</span>
+          <span class="tag">Clean Code</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="cat-label">Firebase</div>
+        <div class="skill-tags">
+          <span class="tag">Crashlytics</span>
+          <span class="tag">FCM</span>
+          <span class="tag">Analytics</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="cat-label">نقشه و مکان‌یابی</div>
+        <div class="skill-tags">
+          <span class="tag">Google Maps</span>
+          <span class="tag">Neshan</span>
+          <span class="tag">OpenStreetMap</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="cat-label">ابزار و پایگاه داده</div>
+        <div class="skill-tags">
+          <span class="tag">Git</span>
+          <span class="tag">Android Studio</span>
+          <span class="tag">Gradle</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">JUnit</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <div class="section-title">تجربه کاری</section>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">Atiran</span>
+        <span class="job-date">آذر ۱۴۰۴ — اردیبهشت ۱۴۰۵</span>
+      </div>
+      <div class="job-meta">
+        <span class="job-role">توسعه‌دهنده ارشد اندروید</span>
+        <span>اهواز، خوزستان</span>
+      </div>
+      <ul class="job-bullets">
+        <li>بهینه‌سازی کوئری‌های SQLite و الگوریتم‌های رندر RecyclerView، منجر به کاهش زمان بارگذاری داده‌ها و ارتقای روانی تجربه کاربری.</li>
+        <li>یکپارچه‌سازی سرویس‌های Firebase (Crashlytics، FCM، Analytics) برای پایش لحظه‌ای پایداری و تسریع شناسایی خطا در محیط تولید.</li>
+        <li>بازطراحی منطق ردیابی موقعیت مکانی با تمرکز بر کارایی باتری و دقت موقعیت‌یابی، کاهش محسوس مصرف منابع در پس‌زمینه.</li>
+        <li>اجرای Refactoring سیستماتیک بر پایه اصول SOLID و Clean Code، کاهش بدهی فنی و افزایش نگهداری‌پذیری کدبیس.</li>
+        <li>انجام Code Review منظم و همکاری با تیم برای شناسایی و رفع گلوگاه‌های عملکردی در سطح اپلیکیشن.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">Jadeh Logistic</span>
+        <span class="job-date">مرداد ۱۳۹۸ — مرداد ۱۴۰۳</span>
+      </div>
+      <div class="job-meta">
+        <span class="job-role">توسعه‌دهنده اندروید</span>
+        <span>تهران، ایران</span>
+      </div>
+      <ul class="job-bullets">
+        <li>رهبری مهاجرت کامل دو اپلیکیشن تولیدی از Java به Kotlin، بهبود خوانایی، کاهش boilerplate و ارتقای عملکرد کلی.</li>
+        <li>بازطراحی معماری از MVC به MVVM و Clean Architecture با به‌کارگیری Design Patterns، افزایش چشمگیر تست‌پذیری و مقیاس‌پذیری.</li>
+        <li>استقرار فرآیند تست منظم و دیباگ هدفمند برای عرضه SDK پایدار با حداقل خطا در محیط تولید.</li>
+        <li>مشارکت در رشد پایگاه کاربری به بیش از ۲۰۰٬۰۰۰ کاربر فعال از طریق تضمین پایداری و تجربه کاربری روان.</li>
+        <li>مشارکت فعال در Code Review تیمی و انتقال دانش برای ارتقای کیفیت کلی محصول.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">Mazrae App</span>
+        <span class="job-date">شهریور ۱۳۹۷ — دی ۱۳۹۷</span>
+      </div>
+      <div class="job-meta">
+        <span class="job-role">توسعه‌دهنده اندروید</span>
+        <span>تهران، ایران</span>
+      </div>
+      <ul class="job-bullets">
+        <li>طراحی و توسعه-wrapper نیتیو اندروید برای میزبانی PWA با Android Trusted Web Activity (TWA)، ارائه تجربه بومی از محصول تحت وب.</li>
+        <li>پیاده‌سازی JavaScript Bridge برای ارتباط دوطرفه یکپارچه میان لایه Front-End و توابع نیتیو اندروید.</li>
+        <li>طراحی APIهای بومی اندروید بر پایه Bridge Pattern جهت گسترش قابلیت‌های دستگاه در مواردی که APIهای وب کفاف نمی‌دادند.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">Wholesale Food Store</span>
+        <span class="job-date">اسفند ۱۳۹۶ — مرداد ۱۳۹۷</span>
+      </div>
+      <div class="job-meta">
+        <span class="job-role">توسعه‌دهنده اندروید (جونیور)</span>
+        <span>اهواز، خوزستان</span>
+      </div>
+      <ul class="job-bullets">
+        <li>توسعه اپلیکیشن از پایه با Java Native، معماری MVC، Retrofit، SQLite و DataStore.</li>
+        <li>پیاده‌سازی سیستم فیلتر پیشرفته چندمعیاره برای جستجوی فروشگاه‌ها بر اساس دسته‌بندی، امتیاز و موقعیت مکانی.</li>
+        <li>مشارکت در Code Review و Pair Programming برای ارتقای کیفیت کد و یادگیری بهترین روش‌های مهندسی.</li>
+        <li>شناسایی و رفع سیستماتیک باگ‌های اپلیکیشن در مراحل مختلف چرخه توسعه.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">فریلنسر مستقل</span>
+        <span class="job-date">دی ۱۳۹۱ — دی ۱۳۹۵</span>
+      </div>
+      <div class="job-meta">
+        <span class="job-role">توسعه‌دهنده نرم‌افزار (دسکتاپ)</span>
+        <span>اهواز، خوزستان</span>
+      </div>
+      <ul class="job-bullets">
+        <li>طراحی و توسعه اپلیکیشن‌های دسکتاپ ویندوز، سیستم‌های CRM و ابزارهای گزارش‌گیری با C#، .NET Framework، SQL Server و Entity Framework.</li>
+        <li>پیاده‌سازی راهکارهای Multi-threading برای بهبود عملکرد و پاسخ‌گویی رابط کاربری در محیط‌های داده‌محور دسکتاپ.</li>
+        <li>خودآموزی و کسب مهارت در HTML، CSS و JavaScript به‌عنوان مکمل توانمندی‌های توسعه بک‌اند.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="section-title">تحصیلات</div>
+
+    <div class="edu-item">
+      <div class="edu-header">
+        <span class="edu-uni">دانشگاه غیر انتفاعی کارون – اهواز</span>
+        <span class="edu-date">دی ۱۳۹۴ — خرداد ۱۳۹۸</span>
+      </div>
+      <div class="edu-degree">کارشناسی مهندسی برق – برق قدرت &nbsp;|&nbsp; معدل: ۱۵ از ۲۰</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-header">
+        <span class="edu-uni">دانشکده فنی شهدا اهواز – مرکز فنی و حرفه‌ای شهید (اهواز)</span>
+        <span class="edu-date">شهریور ۱۳۹۲ — اسفند ۱۳۹۳</span>
+      </div>
+      <div class="edu-degree">کاردانی برق – الکتروتکنیک (برق قدرت) &nbsp;|&nbsp; معدل: ۱۵ از ۲۰</div>
+    </div>
+
+  </section>
+
+</div>
+
+</body>
+</html>

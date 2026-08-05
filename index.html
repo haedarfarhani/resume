@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heydar Khalafnejad — Senior Android Developer</title>
+  <meta name="description" content="Resume of Heydar Khalafnejad, Senior Android Developer with 7+ years experience in Kotlin, Java, Clean Architecture, MVVM." />
+  <link rel="stylesheet" href="font/font-face.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+</head>
+<body>
+
+  <div class="toolbar no-print">
+    <div class="lang-toggle" role="group" aria-label="Select language">
+      <button class="lang-btn active" data-lang="en">English</button>
+      <button class="lang-btn" data-lang="fa">فارسی</button>
+    </div>
+    <button class="theme-toggle no-print" id="themeToggle" type="button" aria-label="Toggle dark mode">
+      <svg class="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="sun-icon" d="M12 3v1m0 16v1m8.66-9H19m-3.34 0l2.12 2.12M6.34 6.34l1.42 1.42m11.12 0L17.5 7.76M6.34 17.66l1.42-1.42M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/><path class="moon-icon" d="M21 12.79A9 9 0 0 1 11.21 3 7 7 0 1 0 21 12.79Z"/></svg>
+    </button>
+    <button class="pdf-btn" id="pdfBtn" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+      <span class="pdf-btn-text">Download PDF</span>
+    </button>
+  </div>
+
+  <main>
+    <div class="resume-page" id="resumePage">
+      <header class="resume-header">
+        <h1 class="name" id="resumeName"></h1>
+        <p class="role" id="resumeRole"></p>
+        <div class="contact-strip" id="contactStrip"></div>
+      </header>
+
+      <section class="summary-section">
+        <h2 class="section-title">
+          <span class="section-label"></span>
+        </h2>
+        <p class="summary-text" id="summaryText"></p>
+      </section>
+
+      <section class="skills-section">
+        <h2 class="section-title">
+          <span class="section-label"></span>
+        </h2>
+        <div class="skills-grid" id="skillsGrid"></div>
+      </section>
+
+      <section class="experience-section">
+        <h2 class="section-title">
+          <span class="section-label"></span>
+        </h2>
+        <div class="jobs-container" id="jobsContainer"></div>
+      </section>
+
+      <section class="education-section">
+        <h2 class="section-title">
+          <span class="section-label"></span>
+        </h2>
+        <div class="education-container" id="educationContainer"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
