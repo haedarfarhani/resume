@@ -1,0 +1,7 @@
+{
+  "name": "Heydar Khalafnejad Resume",
+  "description": "Interactive dual-language (English / Persian) resume and portfolio for Heydar Khalafnejad, Senior Android Developer.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

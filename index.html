@@ -3,65 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Heydar Khalafnejad — Senior Android Developer</title>
+  <title>Heydar Khalafnejad Resume — Senior Android Developer</title>
   <meta name="description" content="Resume of Heydar Khalafnejad, Senior Android Developer with 7+ years experience in Kotlin, Java, Clean Architecture, MVVM." />
+  <meta property="og:title" content="Heydar Khalafnejad Resume — Senior Android Developer" />
+  <meta property="og:description" content="Interactive dual-language (English / Persian) resume and portfolio for Heydar Khalafnejad, Senior Android Developer." />
   <link rel="stylesheet" href="font/font-face.css" />
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
 </head>
 <body>
 
-  <div class="toolbar no-print">
-    <div class="lang-toggle" role="group" aria-label="Select language">
-      <button class="lang-btn active" data-lang="en">English</button>
-      <button class="lang-btn" data-lang="fa">فارسی</button>
-    </div>
-    <button class="theme-toggle no-print" id="themeToggle" type="button" aria-label="Toggle dark mode">
-      <svg class="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="sun-icon" d="M12 3v1m0 16v1m8.66-9H19m-3.34 0l2.12 2.12M6.34 6.34l1.42 1.42m11.12 0L17.5 7.76M6.34 17.66l1.42-1.42M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"/><path class="moon-icon" d="M21 12.79A9 9 0 0 1 11.21 3 7 7 0 1 0 21 12.79Z"/></svg>
-    </button>
-    <button class="pdf-btn" id="pdfBtn" type="button">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
-      <span class="pdf-btn-text">Download PDF</span>
-    </button>
-  </div>
+  <!-- Top Navigation Bar (3-Zone Contract) -->
+  <header class="top-nav no-print">
+    <div class="top-nav-inner">
+      <!-- Zone 1: Brand Wordmark / Monogram -->
+      <a href="#" class="brand-zone" aria-label="Resume top">
+        <div class="brand-monogram" id="brandMonogram">HK</div>
+        <div class="brand-title" id="brandTitle">Heydar Khalafnejad</div>
+        <span class="brand-badge" id="brandBadge">Senior Android</span>
+      </a>
 
+      <!-- Zone 2: Navigation Links -->
+      <nav class="nav-links" aria-label="Resume sections">
+        <a href="#summary" class="nav-link" id="navSummary">Summary</a>
+        <a href="#skills" class="nav-link" id="navSkills">Skills</a>
+        <a href="#experience" class="nav-link" id="navExperience">Experience</a>
+        <a href="#education" class="nav-link" id="navEducation">Education</a>
+      </nav>
+
+      <!-- Zone 3: Actions -->
+      <div class="action-zone">
+        <div class="lang-switcher" role="group" aria-label="Select language">
+          <button class="lang-btn active" data-lang="en" type="button">English</button>
+          <button class="lang-btn" data-lang="fa" type="button">فارسی</button>
+        </div>
+
+        <button class="theme-btn" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 0 1 11.21 3 7 7 0 1 0 21 12.79Z"/></svg>
+        </button>
+
+        <button class="btn-pdf" id="pdfBtn" type="button" aria-label="Download PDF">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span class="pdf-btn-text">Download PDF</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Canvas -->
   <main>
-    <div class="resume-page" id="resumePage">
-      <header class="resume-header">
-        <h1 class="name" id="resumeName"></h1>
-        <p class="role" id="resumeRole"></p>
-        <div class="contact-strip" id="contactStrip"></div>
-      </header>
+    <article class="resume-sheet" id="resumePage">
+      
+      <!-- Hero Header -->
+      <section class="resume-hero">
+        <div class="hero-pattern" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div class="hero-main">
+            <div class="hero-status-pill">
+              <span class="status-beacon"></span>
+              <span id="statusText">Open to Remote Opportunities</span>
+            </div>
+            <h1 class="hero-name" id="resumeName">Heydar Khalafnejad</h1>
+            <p class="hero-role">
+              <span id="resumeRole">Senior Android Developer</span>
+              <span aria-hidden="true">·</span>
+              <span class="role-tagline">Kotlin & Clean Architecture</span>
+            </p>
+            <div class="hero-contacts" id="contactStrip"></div>
+          </div>
 
-      <section class="summary-section">
-        <h2 class="section-title">
-          <span class="section-label"></span>
-        </h2>
-        <p class="summary-text" id="summaryText"></p>
+          <div class="hero-avatar-card" aria-hidden="true">
+            <span class="avatar-initials" id="avatarInitials">HK</span>
+            <span class="avatar-badge">ANDROID</span>
+          </div>
+        </div>
       </section>
 
-      <section class="skills-section">
-        <h2 class="section-title">
-          <span class="section-label"></span>
-        </h2>
-        <div class="skills-grid" id="skillsGrid"></div>
-      </section>
+      <!-- Proof Strip (Impact Metrics) -->
+      <div class="proof-strip" id="proofStrip"></div>
 
-      <section class="experience-section">
-        <h2 class="section-title">
-          <span class="section-label"></span>
-        </h2>
-        <div class="jobs-container" id="jobsContainer"></div>
-      </section>
+      <!-- Main Body Content -->
+      <div class="resume-body">
+        
+        <!-- Summary Section -->
+        <section class="section-block" id="summary">
+          <div class="section-header-wrap">
+            <h2 class="section-title">
+              <svg class="section-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span id="labelSummary">Professional Summary</span>
+            </h2>
+          </div>
+          <div class="summary-box">
+            <p class="summary-text" id="summaryText"></p>
+          </div>
+        </section>
 
-      <section class="education-section">
-        <h2 class="section-title">
-          <span class="section-label"></span>
-        </h2>
-        <div class="education-container" id="educationContainer"></div>
-      </section>
-    </div>
+        <!-- Technical Skills Section -->
+        <section class="section-block" id="skills">
+          <div class="section-header-wrap">
+            <h2 class="section-title">
+              <svg class="section-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              <span id="labelSkills">Technical Skills</span>
+            </h2>
+          </div>
+          <div class="skills-filter-toolbar no-print" id="skillsFilterToolbar"></div>
+          <div class="skills-container" id="skillsGrid"></div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="section-block" id="experience">
+          <div class="section-header-wrap">
+            <h2 class="section-title">
+              <svg class="section-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              <span id="labelExperience">Work Experience</span>
+            </h2>
+          </div>
+          <div class="timeline-container">
+            <div class="timeline-line"></div>
+            <div class="jobs-container" id="jobsContainer"></div>
+          </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section-block" id="education">
+          <div class="section-header-wrap">
+            <h2 class="section-title">
+              <svg class="section-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <span id="labelEducation">Education</span>
+            </h2>
+          </div>
+          <div class="edu-grid" id="educationContainer"></div>
+        </section>
+
+      </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="resume-footer no-print">
+      <span>Heydar Khalafnejad</span>
+      <span class="footer-dot">✦</span>
+      <span>Senior Android Developer</span>
+      <span class="footer-dot">✦</span>
+      <span id="footerStatus">Available Worldwide (Remote)</span>
+    </footer>
   </main>
+
+  <!-- Clipboard Toast -->
+  <div class="toast-notice" id="toastNotice" role="status" aria-live="polite">
+    Copied to clipboard!
+  </div>
 
   <script src="script.js" defer></script>
 </body>
